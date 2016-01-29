@@ -1,0 +1,22 @@
+PODS:
+  - Alamofire (3.1.5)
+  - p2.OAuth2 (2.2):
+    - SwiftKeychain (~> 0.1.5)
+  - PureLayout (3.0.1)
+  - SwiftKeychain (0.1.5)
+  - SwiftyJSON (2.3.2)
+
+DEPENDENCIES:
+  - Alamofire (~> 3.1)
+  - p2.OAuth2
+  - PureLayout
+  - SwiftyJSON (~> 2.3)
+
+SPEC CHECKSUMS:
+  Alamofire: 5f730ba29fd113b7ddd71c1e65d0c630acf5d7b0
+  p2.OAuth2: 47b519c9da500af90b87101e0330c6278e1152c2
+  PureLayout: f35f5384c9c4e4479df041dbe33ad7577b71ddfb
+  SwiftKeychain: 1387edad8b56c659daa93d9ffc99526bac5b0088
+  SwiftyJSON: 04ccea08915aa0109039157c7974cf0298da292a
+
+COCOAPODS: 0.39.0
