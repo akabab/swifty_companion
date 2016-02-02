@@ -124,7 +124,7 @@ class SearchViewController: UIViewController {
     print("prepareForSegue")
 
     if segue.identifier == "ShowUser" {
-      if let destinationVC = segue.destinationViewController as? UserDetailViewController {
+      if let destinationVC = segue.destinationViewController as? UserDetailTableViewController {
         destinationVC.user = self.user
       }
     }

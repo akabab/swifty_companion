@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2CC08F20DAECA9897C41B0AA /* Pods_swifty_companion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A0DCF4C4740BC3BD4646297 /* Pods_swifty_companion.framework */; };
+		912C9EBA1C61296A001B576C /* CustomImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912C9EB91C61296A001B576C /* CustomImageView.swift */; };
 		9148B9B21C5BB54200913427 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9148B9B11C5BB54200913427 /* AppDelegate.swift */; };
 		9148B9B71C5BB54200913427 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9148B9B51C5BB54200913427 /* Main.storyboard */; };
 		9148B9B91C5BB54200913427 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9148B9B81C5BB54200913427 /* Assets.xcassets */; };
@@ -29,6 +30,7 @@
 /* Begin PBXFileReference section */
 		239284C11313CF44CAFC646D /* Pods-swifty_companion.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-swifty_companion.release.xcconfig"; path = "Pods/Target Support Files/Pods-swifty_companion/Pods-swifty_companion.release.xcconfig"; sourceTree = "<group>"; };
 		2A0DCF4C4740BC3BD4646297 /* Pods_swifty_companion.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_swifty_companion.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		912C9EB91C61296A001B576C /* CustomImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomImageView.swift; sourceTree = "<group>"; };
 		9148B9AE1C5BB54200913427 /* swifty_companion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = swifty_companion.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9148B9B11C5BB54200913427 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9148B9B61C5BB54200913427 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -117,6 +119,7 @@
 			children = (
 				9148B9C31C5BB71B00913427 /* CustomButton.swift */,
 				9148B9C41C5BB71B00913427 /* CustomTextField.swift */,
+				912C9EB91C61296A001B576C /* CustomImageView.swift */,
 			);
 			name = CustomUI;
 			sourceTree = "<group>";
@@ -251,6 +254,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				912C9EBA1C61296A001B576C /* CustomImageView.swift in Sources */,
 				9148B9CF1C5BBEF200913427 /* Router.swift in Sources */,
 				91952BFB1C5BF8D200D917CE /* SearchViewController.swift in Sources */,
 				91952C011C5D13D600D917CE /* ProjectsTableViewCell.swift in Sources */,

@@ -8,11 +8,13 @@
 
 import UIKit
 
-class UserDetailViewController: UIViewController {
+class UserDetailTableViewController: UITableViewController {
 
   var user: User? = nil
 
   @IBOutlet weak var profileImage: UIImageView!
+  @IBOutlet weak var nameLabel: UILabel!
+  @IBOutlet weak var loginLabel: UILabel!
 
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -21,15 +23,13 @@ class UserDetailViewController: UIViewController {
 //      print(user)
 
       profileImage.imageFromUrl(user.image_url) // else display default image
+      nameLabel.text = user.name
+      loginLabel.text = user.login
     }
-  }
-
-  @IBAction func projectButtonPressed() {
-    performSegueWithIdentifier("ShowProjects", sender: nil)
-  }
-
-  override func shouldPerformSegueWithIdentifier(identifier: String, sender: AnyObject?) -> Bool {
-    return false
+    
+    self.profileImage.layer.cornerRadius = 50
+    self.profileImage.clipsToBounds = true
+    tableView.tableFooterView = UIView()
   }
 
   override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -40,6 +40,10 @@ class UserDetailViewController: UIViewController {
         }
       }
     }
+  }
+
+  override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    tableView.deselectRowAtIndexPath(indexPath, animated: true)
   }
 
 }
