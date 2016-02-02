@@ -8,5 +8,6 @@ target 'swifty_companion' do
   pod 'SwiftyJSON', '~> 2.3'
   pod 'p2.OAuth2'
   pod 'PureLayout'
+  pod "Unbox"
 end
 

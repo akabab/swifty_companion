@@ -88,6 +88,7 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-swifty_companion/PureLayout.framework"
   install_framework "Pods-swifty_companion/SwiftKeychain.framework"
   install_framework "Pods-swifty_companion/SwiftyJSON.framework"
+  install_framework "Pods-swifty_companion/Unbox.framework"
   install_framework "Pods-swifty_companion/p2_OAuth2.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
@@ -95,5 +96,6 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-swifty_companion/PureLayout.framework"
   install_framework "Pods-swifty_companion/SwiftKeychain.framework"
   install_framework "Pods-swifty_companion/SwiftyJSON.framework"
+  install_framework "Pods-swifty_companion/Unbox.framework"
   install_framework "Pods-swifty_companion/p2_OAuth2.framework"
 fi
