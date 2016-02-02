@@ -2,8 +2,8 @@
 //  CustomButton.swift
 //  ios-pilot
 //
-//  Created by Yoann Cribier on 13/01/16.
-//  Copyright © 2016 Openjet. All rights reserved.
+//  Created by Yoann Cribier on 29/01/16.
+//  Copyright © 2016 Yoann Cribier. All rights reserved.
 //
 
 import UIKit

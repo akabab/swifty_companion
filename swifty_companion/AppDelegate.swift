@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Alamofire
+import p2_OAuth2
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,6 +18,33 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
   func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
     // Override point for customization after application launch.
+    print("Authenticating..")
+    Auth.sharedInstance.authenticateWithClientIdAndSecret(settings: nil)
+//    print("Flush..")
+//    Auth.sharedInstance.oauth2.forgetTokens() // TMP
+    print("Authorizing..")
+    Auth.sharedInstance.authorize(
+      onSuccess: { parameters in
+        dispatch_async(dispatch_get_main_queue()) {
+          print("Successfully logged in with parameters: \(parameters)")
+        }
+      },
+      onFailure: { error in
+        dispatch_async(dispatch_get_main_queue()) {
+          guard let error = error else {
+            print("Failed without error")
+            return
+          }
+
+          guard let oauthError = error as? OAuth2Error else {
+            print(error)
+            //            self.alert(title: "Ops..", message: "Something went wrong", detailedMessage: "\(error)", style: .Alert)
+            return
+          }
+          
+        }
+    })
+
     return true
   }
 
