@@ -17,6 +17,7 @@ class UserDetailTableViewController: UITableViewController {
   @IBOutlet weak var loginLabel: UILabel!
   @IBOutlet weak var phoneButton: UIButton!
   @IBOutlet weak var emailButton: UIButton!
+  @IBOutlet weak var locationLabel: UILabel!
 
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -29,6 +30,7 @@ class UserDetailTableViewController: UITableViewController {
       loginLabel.text = user.login
       phoneButton.setTitle(user.phone, forState: .Normal)
       emailButton.setTitle(user.email, forState: .Normal)
+      locationLabel.text = user.location
     }
     
     self.profileImage.layer.cornerRadius = 50
