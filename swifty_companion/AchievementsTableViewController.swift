@@ -9,7 +9,7 @@
 import UIKit
 
 class ProjectsTableViewController: UITableViewController {
-  
+
   var projects = [Project]()
 
   override func viewDidLoad() {

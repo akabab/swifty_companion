@@ -25,6 +25,8 @@
 		91952BFD1C5C20E000D917CE /* UserDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91952BFC1C5C20E000D917CE /* UserDetailViewController.swift */; };
 		91952BFF1C5D11A800D917CE /* ProjectsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91952BFE1C5D11A800D917CE /* ProjectsTableViewController.swift */; };
 		91952C011C5D13D600D917CE /* ProjectsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91952C001C5D13D600D917CE /* ProjectsTableViewCell.swift */; };
+		919936071C64E7EA00723EF5 /* AchievementsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919936061C64E7EA00723EF5 /* AchievementsTableViewController.swift */; };
+		919936091C64E7FF00723EF5 /* AchievementsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919936081C64E7FF00723EF5 /* AchievementsTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +51,8 @@
 		91952BFC1C5C20E000D917CE /* UserDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDetailViewController.swift; sourceTree = "<group>"; };
 		91952BFE1C5D11A800D917CE /* ProjectsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectsTableViewController.swift; sourceTree = "<group>"; };
 		91952C001C5D13D600D917CE /* ProjectsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectsTableViewCell.swift; sourceTree = "<group>"; };
+		919936061C64E7EA00723EF5 /* AchievementsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AchievementsTableViewController.swift; sourceTree = "<group>"; };
+		919936081C64E7FF00723EF5 /* AchievementsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AchievementsTableViewCell.swift; sourceTree = "<group>"; };
 		A6C29CECFA6353430410C808 /* Pods-swifty_companion.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-swifty_companion.debug.xcconfig"; path = "Pods/Target Support Files/Pods-swifty_companion/Pods-swifty_companion.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -107,8 +111,7 @@
 				9148B9C81C5BBD5400913427 /* Constants.swift */,
 				9148B9D21C5BDE9A00913427 /* User.swift */,
 				91952BFC1C5C20E000D917CE /* UserDetailViewController.swift */,
-				91952BFE1C5D11A800D917CE /* ProjectsTableViewController.swift */,
-				91952C001C5D13D600D917CE /* ProjectsTableViewCell.swift */,
+				9199360A1C64E80A00723EF5 /* TableViews */,
 				910059A61C616BBC00E0A3DA /* Assets.xcassets */,
 			);
 			path = swifty_companion;
@@ -122,6 +125,17 @@
 				912C9EB91C61296A001B576C /* CustomImageView.swift */,
 			);
 			name = CustomUI;
+			sourceTree = "<group>";
+		};
+		9199360A1C64E80A00723EF5 /* TableViews */ = {
+			isa = PBXGroup;
+			children = (
+				91952BFE1C5D11A800D917CE /* ProjectsTableViewController.swift */,
+				91952C001C5D13D600D917CE /* ProjectsTableViewCell.swift */,
+				919936061C64E7EA00723EF5 /* AchievementsTableViewController.swift */,
+				919936081C64E7FF00723EF5 /* AchievementsTableViewCell.swift */,
+			);
+			name = TableViews;
 			sourceTree = "<group>";
 		};
 		A30B95163E443439F7EBD3B1 /* Frameworks */ = {
@@ -258,10 +272,12 @@
 				9148B9CF1C5BBEF200913427 /* Router.swift in Sources */,
 				91952BFB1C5BF8D200D917CE /* SearchViewController.swift in Sources */,
 				91952C011C5D13D600D917CE /* ProjectsTableViewCell.swift in Sources */,
+				919936071C64E7EA00723EF5 /* AchievementsTableViewController.swift in Sources */,
 				9148B9C91C5BBD5500913427 /* Constants.swift in Sources */,
 				9148B9C61C5BB71B00913427 /* CustomTextField.swift in Sources */,
 				9148B9B21C5BB54200913427 /* AppDelegate.swift in Sources */,
 				9148B9C51C5BB71B00913427 /* CustomButton.swift in Sources */,
+				919936091C64E7FF00723EF5 /* AchievementsTableViewCell.swift in Sources */,
 				9148B9CD1C5BBEF200913427 /* Auth.swift in Sources */,
 				9148B9D11C5BC45100913427 /* Error.swift in Sources */,
 				9148B9D31C5BDE9A00913427 /* User.swift in Sources */,

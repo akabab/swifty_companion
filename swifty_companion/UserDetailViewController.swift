@@ -23,7 +23,7 @@ class UserDetailTableViewController: UITableViewController {
     super.viewDidLoad()
 
     if let user = user {
-//      print(user)
+      //      print(user)
 
       profileImage.imageFromUrl(user.image_url, contentMode: .ScaleAspectFill)
       nameLabel.text = user.name
@@ -32,7 +32,7 @@ class UserDetailTableViewController: UITableViewController {
       emailButton.setTitle(user.email, forState: .Normal)
       locationLabel.text = user.location
     }
-    
+
     self.profileImage.layer.cornerRadius = 50
     self.profileImage.clipsToBounds = true
     tableView.tableFooterView = UIView()
@@ -78,11 +78,21 @@ class UserDetailTableViewController: UITableViewController {
   }
 
   override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-    if segue.identifier == "ShowProjects" {
-      if let destinationVC = segue.destinationViewController as? ProjectsTableViewController {
-        if let cursus = user?.cursus where cursus.count > 0 {
-          destinationVC.projects = cursus[0].projects
+    if let identifier = segue.identifier {
+      switch identifier {
+      case "ShowProjects":
+        if let destinationVC = segue.destinationViewController as? ProjectsTableViewController {
+          if let cursus = user?.cursus where cursus.count > 0 {
+            destinationVC.projects = cursus[0].projects
+          }
         }
+      case "ShowAchievements":
+        if let destinationVC = segue.destinationViewController as? AchievementsTableViewController {
+          if let achievements = user?.achievements where achievements.count > 0 {
+            destinationVC.achievements = achievements
+          }
+        }
+      default: break
       }
     }
   }
@@ -90,6 +100,6 @@ class UserDetailTableViewController: UITableViewController {
   override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
     tableView.deselectRowAtIndexPath(indexPath, animated: true)
   }
-
+  
 }
 
