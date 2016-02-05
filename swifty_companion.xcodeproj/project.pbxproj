@@ -8,10 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		2CC08F20DAECA9897C41B0AA /* Pods_swifty_companion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A0DCF4C4740BC3BD4646297 /* Pods_swifty_companion.framework */; };
+		910059A71C616BBD00E0A3DA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 910059A61C616BBC00E0A3DA /* Assets.xcassets */; };
 		912C9EBA1C61296A001B576C /* CustomImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912C9EB91C61296A001B576C /* CustomImageView.swift */; };
 		9148B9B21C5BB54200913427 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9148B9B11C5BB54200913427 /* AppDelegate.swift */; };
 		9148B9B71C5BB54200913427 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9148B9B51C5BB54200913427 /* Main.storyboard */; };
-		9148B9B91C5BB54200913427 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9148B9B81C5BB54200913427 /* Assets.xcassets */; };
 		9148B9BC1C5BB54200913427 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9148B9BA1C5BB54200913427 /* LaunchScreen.storyboard */; };
 		9148B9C51C5BB71B00913427 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9148B9C31C5BB71B00913427 /* CustomButton.swift */; };
 		9148B9C61C5BB71B00913427 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9148B9C41C5BB71B00913427 /* CustomTextField.swift */; };
@@ -30,11 +30,11 @@
 /* Begin PBXFileReference section */
 		239284C11313CF44CAFC646D /* Pods-swifty_companion.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-swifty_companion.release.xcconfig"; path = "Pods/Target Support Files/Pods-swifty_companion/Pods-swifty_companion.release.xcconfig"; sourceTree = "<group>"; };
 		2A0DCF4C4740BC3BD4646297 /* Pods_swifty_companion.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_swifty_companion.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		910059A61C616BBC00E0A3DA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		912C9EB91C61296A001B576C /* CustomImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomImageView.swift; sourceTree = "<group>"; };
 		9148B9AE1C5BB54200913427 /* swifty_companion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = swifty_companion.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9148B9B11C5BB54200913427 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9148B9B61C5BB54200913427 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		9148B9B81C5BB54200913427 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9148B9BB1C5BB54200913427 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9148B9BD1C5BB54200913427 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9148B9C31C5BB71B00913427 /* CustomButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
@@ -102,7 +102,6 @@
 				9148B9CB1C5BBEF200913427 /* Extensions.swift */,
 				9148B9CC1C5BBEF200913427 /* Router.swift */,
 				9148B9B51C5BB54200913427 /* Main.storyboard */,
-				9148B9B81C5BB54200913427 /* Assets.xcassets */,
 				9148B9BA1C5BB54200913427 /* LaunchScreen.storyboard */,
 				9148B9BD1C5BB54200913427 /* Info.plist */,
 				9148B9C81C5BBD5400913427 /* Constants.swift */,
@@ -110,6 +109,7 @@
 				91952BFC1C5C20E000D917CE /* UserDetailViewController.swift */,
 				91952BFE1C5D11A800D917CE /* ProjectsTableViewController.swift */,
 				91952C001C5D13D600D917CE /* ProjectsTableViewCell.swift */,
+				910059A61C616BBC00E0A3DA /* Assets.xcassets */,
 			);
 			path = swifty_companion;
 			sourceTree = "<group>";
@@ -194,7 +194,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9148B9BC1C5BB54200913427 /* LaunchScreen.storyboard in Resources */,
-				9148B9B91C5BB54200913427 /* Assets.xcassets in Resources */,
+				910059A71C616BBD00E0A3DA /* Assets.xcassets in Resources */,
 				9148B9B71C5BB54200913427 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

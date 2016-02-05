@@ -15,6 +15,8 @@ class UserDetailTableViewController: UITableViewController {
   @IBOutlet weak var profileImage: UIImageView!
   @IBOutlet weak var nameLabel: UILabel!
   @IBOutlet weak var loginLabel: UILabel!
+  @IBOutlet weak var phoneButton: UIButton!
+  @IBOutlet weak var emailButton: UIButton!
 
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -22,14 +24,55 @@ class UserDetailTableViewController: UITableViewController {
     if let user = user {
 //      print(user)
 
-      profileImage.imageFromUrl(user.image_url) // else display default image
+      profileImage.imageFromUrl(user.image_url, contentMode: .ScaleAspectFill)
       nameLabel.text = user.name
       loginLabel.text = user.login
+      phoneButton.setTitle(user.phone, forState: .Normal)
+      emailButton.setTitle(user.email, forState: .Normal)
     }
     
     self.profileImage.layer.cornerRadius = 50
     self.profileImage.clipsToBounds = true
     tableView.tableFooterView = UIView()
+  }
+
+  @IBAction func phoneButtonPressed() {
+    if let phoneNumber = phoneButton.currentTitle?.removeWhitespace() {
+      promptPhoneNumber(phoneNumber)
+    }
+  }
+
+  @IBAction func emailButtonPressed() {
+    if let to = emailButton.currentTitle?.removeWhitespace() {
+      mailTo(to)
+    }
+  }
+
+  private func mailTo(to: String) {
+    if let url = NSURL(string: "mailto://\(to)") {
+      UIApplication.sharedApplication().openURL(url)
+    }
+    else {
+      print("Invalid format for email: \(to)")
+    }
+  }
+
+  private func callPhoneNumber(phoneNumber: String) {
+    if let url = NSURL(string: "tel://\(phoneNumber)") {
+      UIApplication.sharedApplication().openURL(url)
+    }
+    else {
+      print("Invalid format for phone number: \(phoneNumber)")
+    }
+  }
+
+  private func promptPhoneNumber(phoneNumber: String) {
+    if let url = NSURL(string: "telprompt://\(phoneNumber)") {
+      UIApplication.sharedApplication().openURL(url)
+    }
+    else {
+      print("Invalid format for phone number: \(phoneNumber)")
+    }
   }
 
   override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
