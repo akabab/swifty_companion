@@ -21,6 +21,8 @@
 		9148B9CF1C5BBEF200913427 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9148B9CC1C5BBEF200913427 /* Router.swift */; };
 		9148B9D11C5BC45100913427 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9148B9D01C5BC45100913427 /* Error.swift */; };
 		9148B9D31C5BDE9A00913427 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9148B9D21C5BDE9A00913427 /* User.swift */; };
+		916C4C2F1C6510D7002607E1 /* SkillsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 916C4C2E1C6510D6002607E1 /* SkillsTableViewCell.swift */; };
+		916C4C311C6510E2002607E1 /* SkillsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 916C4C301C6510E1002607E1 /* SkillsTableViewController.swift */; };
 		91952BFB1C5BF8D200D917CE /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91952BFA1C5BF8D200D917CE /* SearchViewController.swift */; };
 		91952BFD1C5C20E000D917CE /* UserDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91952BFC1C5C20E000D917CE /* UserDetailViewController.swift */; };
 		91952BFF1C5D11A800D917CE /* ProjectsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91952BFE1C5D11A800D917CE /* ProjectsTableViewController.swift */; };
@@ -47,6 +49,8 @@
 		9148B9CC1C5BBEF200913427 /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		9148B9D01C5BC45100913427 /* Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
 		9148B9D21C5BDE9A00913427 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		916C4C2E1C6510D6002607E1 /* SkillsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkillsTableViewCell.swift; sourceTree = "<group>"; };
+		916C4C301C6510E1002607E1 /* SkillsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkillsTableViewController.swift; sourceTree = "<group>"; };
 		91952BFA1C5BF8D200D917CE /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		91952BFC1C5C20E000D917CE /* UserDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDetailViewController.swift; sourceTree = "<group>"; };
 		91952BFE1C5D11A800D917CE /* ProjectsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectsTableViewController.swift; sourceTree = "<group>"; };
@@ -151,13 +155,23 @@
 			name = DataModels;
 			sourceTree = "<group>";
 		};
+		916C4C321C6510F8002607E1 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				91952C001C5D13D600D917CE /* ProjectsTableViewCell.swift */,
+				919936081C64E7FF00723EF5 /* AchievementsTableViewCell.swift */,
+				916C4C2E1C6510D6002607E1 /* SkillsTableViewCell.swift */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
 		9199360A1C64E80A00723EF5 /* TableViews */ = {
 			isa = PBXGroup;
 			children = (
 				91952BFE1C5D11A800D917CE /* ProjectsTableViewController.swift */,
-				91952C001C5D13D600D917CE /* ProjectsTableViewCell.swift */,
 				919936061C64E7EA00723EF5 /* AchievementsTableViewController.swift */,
-				919936081C64E7FF00723EF5 /* AchievementsTableViewCell.swift */,
+				916C4C301C6510E1002607E1 /* SkillsTableViewController.swift */,
+				916C4C321C6510F8002607E1 /* Cells */,
 			);
 			name = TableViews;
 			sourceTree = "<group>";
@@ -298,6 +312,7 @@
 				91952C011C5D13D600D917CE /* ProjectsTableViewCell.swift in Sources */,
 				919936071C64E7EA00723EF5 /* AchievementsTableViewController.swift in Sources */,
 				9148B9C91C5BBD5500913427 /* Constants.swift in Sources */,
+				916C4C2F1C6510D7002607E1 /* SkillsTableViewCell.swift in Sources */,
 				9148B9C61C5BB71B00913427 /* CustomTextField.swift in Sources */,
 				9148B9B21C5BB54200913427 /* AppDelegate.swift in Sources */,
 				9148B9C51C5BB71B00913427 /* CustomButton.swift in Sources */,
@@ -305,6 +320,7 @@
 				9148B9CD1C5BBEF200913427 /* Auth.swift in Sources */,
 				9148B9D11C5BC45100913427 /* Error.swift in Sources */,
 				9148B9D31C5BDE9A00913427 /* User.swift in Sources */,
+				916C4C311C6510E2002607E1 /* SkillsTableViewController.swift in Sources */,
 				9148B9CE1C5BBEF200913427 /* Extensions.swift in Sources */,
 				91952BFD1C5C20E000D917CE /* UserDetailViewController.swift in Sources */,
 				91952BFF1C5D11A800D917CE /* ProjectsTableViewController.swift in Sources */,

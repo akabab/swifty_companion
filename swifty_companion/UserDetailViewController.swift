@@ -12,6 +12,8 @@ class UserDetailTableViewController: UITableViewController {
 
   var user: User? = nil
 
+  @IBOutlet weak var titleItem: UINavigationItem!
+
   @IBOutlet weak var profileImage: UIImageView!
   @IBOutlet weak var nameLabel: UILabel!
   @IBOutlet weak var loginLabel: UILabel!
@@ -29,7 +31,6 @@ class UserDetailTableViewController: UITableViewController {
     super.viewDidLoad()
 
     if let user = user {
-//      print(user)
 
       profileImage.imageFromUrl(user.image_url, contentMode: .ScaleAspectFill)
       nameLabel.text = user.name
@@ -59,6 +60,16 @@ class UserDetailTableViewController: UITableViewController {
     self.profileImage.layer.cornerRadius = 50
     self.profileImage.clipsToBounds = true
     tableView.tableFooterView = UIView()
+
+    let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: Selector("imageTapped:"))
+    self.profileImage.userInteractionEnabled = true
+    self.profileImage.addGestureRecognizer(tapGestureRecognizer)
+  }
+
+  func imageTapped(sender: AnyObject) {
+    if let user = self.user, let url = NSURL(string: "https://profile.intra.42.fr/users/\(user.login)") {
+      UIApplication.sharedApplication().openURL(url)
+    }
   }
 
   private func disableCell(cell: UITableViewCell) {
@@ -128,6 +139,12 @@ class UserDetailTableViewController: UITableViewController {
         if let destinationVC = segue.destinationViewController as? AchievementsTableViewController {
           if let achievements = user?.achievements where achievements.count > 0 {
             destinationVC.achievements = achievements
+          }
+        }
+      case "ShowSkills":
+        if let destinationVC = segue.destinationViewController as? SkillsTableViewController {
+          if let user = self.user, let cursus42 = getCursus42FromUser(user) where cursus42.skills.count > 0 {
+            destinationVC.skills = cursus42.skills
           }
         }
       default: break

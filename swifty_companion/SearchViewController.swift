@@ -85,10 +85,6 @@ class SearchViewController: UIViewController {
     Alamofire.request(Router.Users(id: login)).validate().responseData { response in
       self.searchButton.status = .Idle
 
-      print(response.request)
-      print(response.response)
-      print(response.result)
-
       switch response.result {
       case .Success:
         print("Validation Successful")
@@ -113,14 +109,10 @@ class SearchViewController: UIViewController {
   }
 
   override func shouldPerformSegueWithIdentifier(identifier: String, sender: AnyObject?) -> Bool {
-    print("shouldPerformSegueWithIdentifier")
-
     return false
   }
 
   override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-    print("prepareForSegue")
-
     if segue.identifier == "ShowUser" {
       if let destinationVC = segue.destinationViewController as? UserDetailTableViewController {
         destinationVC.user = self.user
