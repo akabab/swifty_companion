@@ -98,20 +98,14 @@
 		9148B9B01C5BB54200913427 /* swifty_companion */ = {
 			isa = PBXGroup;
 			children = (
-				91952BFA1C5BF8D200D917CE /* SearchViewController.swift */,
+				916C4C2D1C64F936002607E1 /* DataModels */,
+				916C4C2C1C64F927002607E1 /* Modules */,
+				916C4C2B1C64F914002607E1 /* Controllers */,
 				9148B9C71C5BB98100913427 /* CustomUI */,
 				9148B9B11C5BB54200913427 /* AppDelegate.swift */,
-				9148B9CA1C5BBEF200913427 /* Auth.swift */,
-				9148B9D01C5BC45100913427 /* Error.swift */,
-				9148B9CB1C5BBEF200913427 /* Extensions.swift */,
-				9148B9CC1C5BBEF200913427 /* Router.swift */,
 				9148B9B51C5BB54200913427 /* Main.storyboard */,
 				9148B9BA1C5BB54200913427 /* LaunchScreen.storyboard */,
 				9148B9BD1C5BB54200913427 /* Info.plist */,
-				9148B9C81C5BBD5400913427 /* Constants.swift */,
-				9148B9D21C5BDE9A00913427 /* User.swift */,
-				91952BFC1C5C20E000D917CE /* UserDetailViewController.swift */,
-				9199360A1C64E80A00723EF5 /* TableViews */,
 				910059A61C616BBC00E0A3DA /* Assets.xcassets */,
 			);
 			path = swifty_companion;
@@ -125,6 +119,36 @@
 				912C9EB91C61296A001B576C /* CustomImageView.swift */,
 			);
 			name = CustomUI;
+			sourceTree = "<group>";
+		};
+		916C4C2B1C64F914002607E1 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				91952BFA1C5BF8D200D917CE /* SearchViewController.swift */,
+				91952BFC1C5C20E000D917CE /* UserDetailViewController.swift */,
+				9199360A1C64E80A00723EF5 /* TableViews */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		916C4C2C1C64F927002607E1 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				9148B9CA1C5BBEF200913427 /* Auth.swift */,
+				9148B9D01C5BC45100913427 /* Error.swift */,
+				9148B9CB1C5BBEF200913427 /* Extensions.swift */,
+				9148B9CC1C5BBEF200913427 /* Router.swift */,
+				9148B9C81C5BBD5400913427 /* Constants.swift */,
+			);
+			name = Modules;
+			sourceTree = "<group>";
+		};
+		916C4C2D1C64F936002607E1 /* DataModels */ = {
+			isa = PBXGroup;
+			children = (
+				9148B9D21C5BDE9A00913427 /* User.swift */,
+			);
+			name = DataModels;
 			sourceTree = "<group>";
 		};
 		9199360A1C64E80A00723EF5 /* TableViews */ = {

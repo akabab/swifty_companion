@@ -8,9 +8,8 @@
 
 import UIKit
 
-class ProjectsTableViewCell: UITableViewCell {
+class AchievementsTableViewCell: UITableViewCell {
 
   @IBOutlet weak var nameLabel: UILabel!
-  @IBOutlet weak var markLabel: UILabel!
-
+  @IBOutlet weak var descriptionLabel: UILabel!
 }

@@ -17,6 +17,8 @@ struct User: Unboxable {
   let phone: String?
   let image_url: String
   let location: String?
+  let isStaff: Bool
+  let correctionPoints: Int
 
   let achievements: [Achievement]
 
@@ -30,7 +32,9 @@ struct User: Unboxable {
     self.phone = unboxer.unbox("phone")
     self.image_url = unboxer.unbox("image_url")
     self.location = unboxer.unbox("location")
-
+    self.isStaff = unboxer.unbox("staff?")
+    self.correctionPoints = unboxer.unbox("correction_point")
+    
     self.achievements = unboxer.unbox("achievements")
 
     self.cursus = unboxer.unbox("cursus")

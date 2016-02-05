@@ -19,23 +19,52 @@ class UserDetailTableViewController: UITableViewController {
   @IBOutlet weak var emailButton: UIButton!
   @IBOutlet weak var locationLabel: UILabel!
 
+  @IBOutlet weak var crownImage: UIImageView!
+
+  @IBOutlet weak var projectsCell: UITableViewCell!
+  @IBOutlet weak var achievementsCell: UITableViewCell!
+  @IBOutlet weak var skillsCell: UITableViewCell!
+
   override func viewDidLoad() {
     super.viewDidLoad()
 
     if let user = user {
-      //      print(user)
+//      print(user)
 
       profileImage.imageFromUrl(user.image_url, contentMode: .ScaleAspectFill)
       nameLabel.text = user.name
       loginLabel.text = user.login
       phoneButton.setTitle(user.phone, forState: .Normal)
       emailButton.setTitle(user.email, forState: .Normal)
-      locationLabel.text = user.location
+
+      locationLabel.text = user.location != nil ? user.location : "not logged"
+
+      let cursus42 = getCursus42FromUser(user)
+      if cursus42 == nil || cursus42!.projects.isEmpty {
+        disableCell(projectsCell)
+      }
+      if user.achievements.isEmpty {
+        disableCell(achievementsCell)
+      }
+      if cursus42 == nil || cursus42!.skills.isEmpty {
+        disableCell(skillsCell)
+      }
+
+      if !user.isStaff {
+        crownImage.hidden = true
+      }
+
     }
 
     self.profileImage.layer.cornerRadius = 50
     self.profileImage.clipsToBounds = true
     tableView.tableFooterView = UIView()
+  }
+
+  private func disableCell(cell: UITableViewCell) {
+    cell.contentView.alpha = 0.5
+    cell.accessoryType = .None
+    cell.userInteractionEnabled = false
   }
 
   @IBAction func phoneButtonPressed() {
@@ -77,13 +106,22 @@ class UserDetailTableViewController: UITableViewController {
     }
   }
 
+  private func getCursus42FromUser(user: User) -> Cursus? {
+    for c in user.cursus {
+      if c.slug == "42" {
+        return c
+      }
+    }
+    return nil
+  }
+
   override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
     if let identifier = segue.identifier {
       switch identifier {
       case "ShowProjects":
         if let destinationVC = segue.destinationViewController as? ProjectsTableViewController {
-          if let cursus = user?.cursus where cursus.count > 0 {
-            destinationVC.projects = cursus[0].projects
+          if let user = self.user, let cursus42 = getCursus42FromUser(user) where cursus42.projects.count > 0 {
+            destinationVC.projects = cursus42.projects
           }
         }
       case "ShowAchievements":

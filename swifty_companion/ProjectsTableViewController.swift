@@ -34,9 +34,24 @@ class ProjectsTableViewController: UITableViewController {
 
     let project = projects[indexPath.row]
     cell.nameLabel.text = fixedNameWithProject(project)
-    cell.markLabel.text = "\(project.final_mark != nil ? String(project.final_mark!) : "...")"
+
+    let final_mark = project.final_mark
+    cell.markLabel.text = final_mark != nil ? String(final_mark!) : "..."
+    if let mark = final_mark {
+      setMarkColorForCell(cell, mark: mark)
+    }
 
     return cell
+  }
+
+  private func setMarkColorForCell(cell: ProjectsTableViewCell, mark: Int) {
+    cell.markLabel.alpha = CGFloat(Double(mark) * 0.5 / 125 + 0.5)
+//      switch mark {
+//      case 0..<50: cell.markLabel.textColor = UIColor.redColor()
+//      case 50..<100: cell.markLabel.textColor = UIColor.orangeColor()
+//      case 100...200: cell.markLabel.textColor = UIColor.greenColor()
+//      default: break
+//      }
   }
 
   func fixedNameWithProject(project: Project) -> String {

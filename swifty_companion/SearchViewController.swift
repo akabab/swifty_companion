@@ -101,14 +101,12 @@ class SearchViewController: UIViewController {
       }
 
       if let data = response.result.value {
-        if let user: User = Unbox(data) {
-          self.user = user
-//          print(user)
-          print("go")
+        do {
+          self.user = try UnboxOrThrow(data) as User
           self.performSegueWithIdentifier("ShowUser", sender: nil)
         }
-        else {
-          print("FAILED")
+        catch {
+          print(error)
         }
       }
     }

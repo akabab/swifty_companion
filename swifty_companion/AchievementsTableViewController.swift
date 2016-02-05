@@ -8,12 +8,18 @@
 
 import UIKit
 
-class ProjectsTableViewController: UITableViewController {
+class AchievementsTableViewController: UITableViewController {
 
-  var projects = [Project]()
+  var achievements = [Achievement]()
+  let cellIdentifier = "AchievementsTableViewCell"
 
   override func viewDidLoad() {
     super.viewDidLoad()
+
+    tableView.estimatedRowHeight = 60.0
+    tableView.rowHeight = UITableViewAutomaticDimension
+    tableView.setNeedsLayout()
+    tableView.layoutIfNeeded()
   }
 
   override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -21,7 +27,7 @@ class ProjectsTableViewController: UITableViewController {
   }
 
   override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return projects.count
+    return achievements.count
   }
 
   override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
@@ -29,24 +35,13 @@ class ProjectsTableViewController: UITableViewController {
   }
 
   override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-    let cellIdentifier = "ProjectsTableViewCell"
-    let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! ProjectsTableViewCell
+    let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! AchievementsTableViewCell
 
-    let project = projects[indexPath.row]
-    cell.nameLabel.text = fixedNameWithProject(project)
-    cell.markLabel.text = "\(project.final_mark != nil ? String(project.final_mark!) : "...")"
+    let achievement = achievements[indexPath.row]
+    cell.nameLabel.text = achievement.name
+    cell.descriptionLabel.text = achievement.description
 
     return cell
-  }
-
-  func fixedNameWithProject(project: Project) -> String {
-    if project.slug.hasPrefix("piscine") {
-      let split = project.slug.componentsSeparatedByString("-")
-      if split.count == 3 {
-        return "Piscine \(split[1]) - \(project.name)"
-      }
-    }
-    return project.name
   }
 
 }
