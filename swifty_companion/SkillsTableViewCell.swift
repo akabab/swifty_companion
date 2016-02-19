@@ -12,4 +12,5 @@ class SkillsTableViewCell: UITableViewCell {
 
   @IBOutlet weak var nameLabel: UILabel!
   @IBOutlet weak var levelLabel: UILabel!
+  @IBOutlet weak var progressBar: UIProgressView!
 }

@@ -31,13 +31,22 @@ class SkillsTableViewController: UITableViewController {
     tableView.deselectRowAtIndexPath(indexPath, animated: true)
   }
 
+  override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+    let cell = cell as! SkillsTableViewCell
+    cell.progressBar.progress = 0
+  }
+
   override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! SkillsTableViewCell
 
     let skill = skills[indexPath.row]
     cell.nameLabel.text = skill.name
     cell.levelLabel.text = String(skill.level)
-
+    let levelMax: Float = 21.0
+    let delayInSeconds: Double = 0.5
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(delayInSeconds * Double(NSEC_PER_SEC))), dispatch_get_main_queue()) {
+      cell.progressBar.setProgress(skill.level / levelMax, animated: true)
+    }
     return cell
   }
 

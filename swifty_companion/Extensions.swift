@@ -68,8 +68,11 @@ extension UIColor {
 
     if hexString.hasPrefix("#") {
       let start = hexString.startIndex.advancedBy(1)
-      let hexColor = hexString.substringFromIndex(start)
+      var hexColor = hexString.substringFromIndex(start)
 
+      if hexColor.characters.count == 6 {
+        hexColor += "ff"
+      }
       if hexColor.characters.count == 8 {
         let scanner = NSScanner(string: hexColor)
         var hexNumber: UInt64 = 0
@@ -83,7 +86,16 @@ extension UIColor {
           self.init(red: r, green: g, blue: b, alpha: a)
           return
         }
+        else {
+          print("UIColor(hexString: \(hexString)) error: failed to scan value")
+        }
       }
+      else {
+        print("UIColor(hexString: \(hexString)) error: invalid characters count")
+      }
+    }
+    else {
+      print("UIColor(hexString: \(hexString)) error: missing '#' prefix")
     }
     return nil
   }

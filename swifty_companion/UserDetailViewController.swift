@@ -54,7 +54,6 @@ class UserDetailTableViewController: UITableViewController {
       if !user.isStaff {
         crownImage.hidden = true
       }
-
     }
 
     self.profileImage.layer.cornerRadius = 50
