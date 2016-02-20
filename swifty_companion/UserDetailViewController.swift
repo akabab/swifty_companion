@@ -105,7 +105,7 @@ class UserDetailTableViewController: UITableViewController {
 
   @IBAction func phoneButtonPressed() {
     if let phoneNumber = phoneButton.currentTitle?.removeWhitespace() {
-      promptPhoneNumber(phoneNumber)
+      callPhoneNumber(phoneNumber, shouldPrompt: true)
     }
   }
 
@@ -116,30 +116,30 @@ class UserDetailTableViewController: UITableViewController {
   }
 
   private func mailTo(to: String) {
-    if let url = NSURL(string: "mailto://\(to)") {
-      UIApplication.sharedApplication().openURL(url)
-    }
-    else {
+    guard let url = NSURL(string: "mailto://\(to)") else {
       print("Invalid format for email: \(to)")
+      return
     }
+
+    UIApplication.sharedApplication().openURL(url)
   }
 
-  private func callPhoneNumber(phoneNumber: String) {
-    if let url = NSURL(string: "tel://\(phoneNumber)") {
-      UIApplication.sharedApplication().openURL(url)
-    }
-    else {
+  private func messagePhoneNumber(phoneNumber: String) {
+    guard let url = NSURL(string: "sms://\(phoneNumber)") else {
       print("Invalid format for phone number: \(phoneNumber)")
+      return
     }
+
+    UIApplication.sharedApplication().openURL(url)
   }
 
-  private func promptPhoneNumber(phoneNumber: String) {
-    if let url = NSURL(string: "telprompt://\(phoneNumber)") {
-      UIApplication.sharedApplication().openURL(url)
-    }
-    else {
+  private func callPhoneNumber(phoneNumber: String, shouldPrompt: Bool = false) {
+    guard let url = NSURL(string: "tel\(shouldPrompt ? "prompt" : "")://\(phoneNumber)") else {
       print("Invalid format for phone number: \(phoneNumber)")
+      return
     }
+
+    UIApplication.sharedApplication().openURL(url)
   }
 
   private func getCursus42FromUser(user: User) -> Cursus? {

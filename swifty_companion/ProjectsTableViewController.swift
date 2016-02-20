@@ -14,7 +14,10 @@ class ProjectsTableViewController: UITableViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
+
+    projects.sortInPlace { $0.name < $1.name }
   }
+
 
   override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
     return 1
@@ -46,12 +49,6 @@ class ProjectsTableViewController: UITableViewController {
 
   private func setMarkColorForCell(cell: ProjectsTableViewCell, mark: Int) {
     cell.markLabel.alpha = CGFloat(Double(mark) * 0.5 / 125 + 0.5)
-//      switch mark {
-//      case 0..<50: cell.markLabel.textColor = UIColor.redColor()
-//      case 50..<100: cell.markLabel.textColor = UIColor.orangeColor()
-//      case 100...200: cell.markLabel.textColor = UIColor.greenColor()
-//      default: break
-//      }
   }
 
   func fixedNameWithProject(project: Project) -> String {
@@ -63,5 +60,4 @@ class ProjectsTableViewController: UITableViewController {
     }
     return project.name
   }
-
 }

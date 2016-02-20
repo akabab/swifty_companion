@@ -68,10 +68,32 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </textField>
+                            <imageView contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default_profile" translatesAutoresizingMaskIntoConstraints="NO" id="rb3-AN-tkF" customClass="CustomImageView" customModule="swifty_companion" customModuleProvider="target">
+                                <rect key="frame" x="110" y="130" width="100" height="100"/>
+                                <color key="backgroundColor" red="0.87908380679999998" green="0.87908380679999998" blue="0.87908380679999998" alpha="0.5" colorSpace="calibratedRGB"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="gQR-oI-Pge"/>
+                                    <constraint firstAttribute="width" constant="100" id="oLM-K1-LyS"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="50"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.074509803920000006" green="0.37647058820000001" blue="0.99607843139999996" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.19215686269999999" green="0.2156862745" blue="0.26274509800000001" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="rb3-AN-tkF" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="6TV-Vl-jsf"/>
                             <constraint firstItem="oeO-a0-dHQ" firstAttribute="top" secondItem="8Xn-vj-ord" secondAttribute="bottom" constant="10" id="ANP-61-Pia"/>
+                            <constraint firstItem="8Xn-vj-ord" firstAttribute="top" secondItem="rb3-AN-tkF" secondAttribute="bottom" constant="34" id="BBO-8u-Plx"/>
                             <constraint firstItem="8Xn-vj-ord" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Bdd-cW-riN"/>
                             <constraint firstAttribute="trailingMargin" secondItem="1wH-Wj-udK" secondAttribute="trailing" id="DY5-8X-HJv"/>
                             <constraint firstItem="1wH-Wj-udK" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="HIn-Cl-zSF"/>
@@ -100,7 +122,7 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="aj1-1t-Xa1">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.17414529670000001" green="0.19430321179999999" blue="0.24758567200000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.19215686269999999" green="0.2156862745" blue="0.26274509800000001" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="separatorColor" red="0.23413116688710914" green="0.26123265211825381" blue="0.33286872173821991" alpha="1" colorSpace="calibratedRGB"/>
                         <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         <sections>
@@ -355,7 +377,7 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="40" sectionHeaderHeight="28" sectionFooterHeight="28" id="8zH-7B-IgC">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.19215686269999999" green="0.2156862745" blue="0.26274509800000001" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="separatorColor" red="0.25701786224681372" green="0.28676856092752795" blue="0.36540717072169171" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ProjectsTableViewCell" rowHeight="40" id="WK0-Sq-2NJ" customClass="ProjectsTableViewCell" customModule="swifty_companion" customModuleProvider="target">
@@ -431,7 +453,7 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="28" sectionFooterHeight="28" id="0jW-19-iRj">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.19215686269999999" green="0.2156862745" blue="0.26274509800000001" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="separatorColor" red="0.2570178622" green="0.28676856090000002" blue="0.36540717070000001" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="AchievementsTableViewCell" rowHeight="60" id="vBO-1J-yfS" customClass="AchievementsTableViewCell" customModule="swifty_companion" customModuleProvider="target">
@@ -490,7 +512,7 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="40" sectionHeaderHeight="28" sectionFooterHeight="28" id="7JR-Ng-Czl">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.19215686269999999" green="0.2156862745" blue="0.26274509800000001" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="separatorColor" red="0.2570178622" green="0.28676856090000002" blue="0.36540717070000001" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SkillsTableViewCell" rowHeight="40" id="CX6-eY-zxm" customClass="SkillsTableViewCell" customModule="swifty_companion" customModuleProvider="target">
@@ -514,6 +536,8 @@
                                         </label>
                                         <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="5ya-zU-C8w">
                                             <rect key="frame" x="0.0" y="37" width="320" height="2"/>
+                                            <color key="progressTintColor" red="0.074509803920000006" green="0.37647058820000001" blue="0.99607843139999996" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="trackTintColor" red="0.26551483149999999" green="0.29809448059999999" blue="0.36481326139999998" alpha="1" colorSpace="calibratedRGB"/>
                                         </progressView>
                                     </subviews>
                                     <color key="backgroundColor" red="0.19215686269999999" green="0.2156862745" blue="0.26274509800000001" alpha="1" colorSpace="calibratedRGB"/>
