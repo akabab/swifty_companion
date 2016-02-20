@@ -27,33 +27,59 @@ class UserDetailTableViewController: UITableViewController {
   @IBOutlet weak var achievementsCell: UITableViewCell!
   @IBOutlet weak var skillsCell: UITableViewCell!
 
+  @IBOutlet weak var progressBar: CustomProgressView!
+  @IBOutlet weak var levelLabel: UILabel!
+
   override func viewDidLoad() {
     super.viewDidLoad()
 
     if let user = user {
 
+      // Image
       profileImage.imageFromUrl(user.image_url, contentMode: .ScaleAspectFill)
+      if !user.isStaff {
+        crownImage.hidden = true
+      }
+
+      // Name / Login
       nameLabel.text = user.name
       loginLabel.text = user.login
+
+      // Phone / Mail / Location
       phoneButton.setTitle(user.phone, forState: .Normal)
       emailButton.setTitle(user.email, forState: .Normal)
-
       locationLabel.text = user.location != nil ? user.location : "not logged"
 
       let cursus42 = getCursus42FromUser(user)
+
+      // Level
+      if cursus42 != nil {
+        let level = Int(cursus42!.level)
+        let percent = Int(cursus42!.level * 100) % 100
+        levelLabel.text = "Level \(level) - \(percent)%"
+
+        progressBar.setBarProgress(Float(percent) / 100)
+      }
+      else {
+        levelLabel.text = ""
+        progressBar.setBarProgress(0)
+      }
+
+      // Projects
       if cursus42 == nil || cursus42!.projects.isEmpty {
         disableCell(projectsCell)
       }
+
+      // Achievements
       if user.achievements.isEmpty {
         disableCell(achievementsCell)
       }
+
+      // Skills
       if cursus42 == nil || cursus42!.skills.isEmpty {
         disableCell(skillsCell)
       }
 
-      if !user.isStaff {
-        crownImage.hidden = true
-      }
     }
 
     self.profileImage.layer.cornerRadius = 50
