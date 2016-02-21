@@ -12,6 +12,11 @@ import ContactsUI
 
 extension UserDetailTableViewController: CNContactViewControllerDelegate {
   func contactViewController(viewController: CNContactViewController, didCompleteWithContact contact: CNContact?) {
+
+    if contact != nil {
+      addButtonItem.enabled = false
+    }
+
     dismissViewControllerAnimated(true, completion: nil)
   }
 
@@ -25,6 +30,7 @@ class UserDetailTableViewController: UITableViewController {
   var user: User!
 
   @IBOutlet weak var titleItem: UINavigationItem!
+  @IBOutlet weak var addButtonItem: UIBarButtonItem!
 
   @IBOutlet weak var profileImage: UIImageView!
   @IBOutlet weak var nameLabel: UILabel!
@@ -44,6 +50,10 @@ class UserDetailTableViewController: UITableViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
+
+    // Contact Feature
+    addButtonItem.enabled = false
+    checkContactExistence()
 
     // Image
     profileImage.imageFromUrl(user.image_url, contentMode: .ScaleAspectFill)
@@ -134,6 +144,32 @@ class UserDetailTableViewController: UITableViewController {
     self.presentViewController(contactNavigationVC, animated: true, completion: nil)
   }
 
+  func checkContactExistence() {
+    let priority = DISPATCH_QUEUE_PRIORITY_DEFAULT
+    dispatch_async(dispatch_get_global_queue(priority, 0)) {
+
+      let store = CNContactStore()
+      let predicate: NSPredicate = CNContact.predicateForContactsMatchingName(self.user.login)
+      let keyToFetch = [CNContactNicknameKey]
+
+      do {
+        let contacts = try store.unifiedContactsMatchingPredicate(predicate, keysToFetch: keyToFetch)
+        if contacts.isEmpty {
+          dispatch_async(dispatch_get_main_queue()) {
+            self.addButtonItem.enabled = true
+          }
+        }
+        else {
+          print("contact already exists")
+        }
+      }
+      catch {
+        print(error)
+      }
+    }
+    
+  }
+
   private func disableCell(cell: UITableViewCell) {
     cell.contentView.alpha = 0.5
     cell.accessoryType = .None
@@ -141,9 +177,23 @@ class UserDetailTableViewController: UITableViewController {
   }
 
   @IBAction func phoneButtonPressed() {
-    if let phoneNumber = phoneButton.currentTitle?.removeWhitespace() {
-      messagePhoneNumber(phoneNumber) // (phoneNumber, shouldPrompt: true)
+
+    guard let phoneNumber = phoneButton.currentTitle?.removeWhitespace() else {
+      return
     }
+
+    let alert = UIAlertController(title: phoneNumber, message: "", preferredStyle: .ActionSheet)
+    let firstAction = UIAlertAction(title: "Call", style: .Default) { (alert: UIAlertAction!) -> Void in
+      self.callPhoneNumber(phoneNumber)
+    }
+
+    let secondAction = UIAlertAction(title: "Send Message", style: .Default) { (alert: UIAlertAction!) -> Void in
+      self.messagePhoneNumber(phoneNumber)
+    }
+
+    alert.addAction(firstAction)
+    alert.addAction(secondAction)
+    presentViewController(alert, animated: true, completion: nil)
   }
 
   @IBAction func emailButtonPressed() {

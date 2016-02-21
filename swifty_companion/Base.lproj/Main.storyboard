@@ -48,7 +48,7 @@
                                 <color key="textColor" red="0.87908380679999998" green="0.027927340910000001" blue="0.21461220540000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="ycribier" placeholder="login" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="8Xn-vj-ord" customClass="CustomTextField" customModule="swifty_companion" customModuleProvider="target">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="login" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="8Xn-vj-ord" customClass="CustomTextField" customModule="swifty_companion" customModuleProvider="target">
                                 <rect key="frame" x="16" y="264" width="180" height="40"/>
                                 <color key="backgroundColor" red="0.87843137250000003" green="0.91372549020000005" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -358,6 +358,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="achievementsCell" destination="YLg-yS-lKc" id="ldL-Ux-Sbi"/>
+                        <outlet property="addButtonItem" destination="929-KF-JZG" id="DAe-gc-fKm"/>
                         <outlet property="crownImage" destination="uEQ-MH-f3D" id="9Oj-5S-RNA"/>
                         <outlet property="emailButton" destination="xeg-vU-JdI" id="q2W-A0-mOc"/>
                         <outlet property="levelLabel" destination="xJM-br-sWT" id="Xzu-iN-bs2"/>
