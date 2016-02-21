@@ -18,7 +18,6 @@ class ProjectsTableViewController: UITableViewController {
     projects.sortInPlace { $0.name < $1.name }
   }
 
-
   override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
     return 1
   }

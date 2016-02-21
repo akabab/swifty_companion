@@ -7,10 +7,22 @@
 //
 
 import UIKit
+import Contacts
+import ContactsUI
+
+extension UserDetailTableViewController: CNContactViewControllerDelegate {
+  func contactViewController(viewController: CNContactViewController, didCompleteWithContact contact: CNContact?) {
+    dismissViewControllerAnimated(true, completion: nil)
+  }
+
+  func contactViewController(viewController: CNContactViewController, shouldPerformDefaultActionForContactProperty property: CNContactProperty) -> Bool {
+    return true
+  }
+}
 
 class UserDetailTableViewController: UITableViewController {
 
-  var user: User? = nil
+  var user: User!
 
   @IBOutlet weak var titleItem: UINavigationItem!
 
@@ -33,53 +45,49 @@ class UserDetailTableViewController: UITableViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
 
-    if let user = user {
+    // Image
+    profileImage.imageFromUrl(user.image_url, contentMode: .ScaleAspectFill)
+    if !user.isStaff {
+      crownImage.hidden = true
+    }
 
-      // Image
-      profileImage.imageFromUrl(user.image_url, contentMode: .ScaleAspectFill)
-      if !user.isStaff {
-        crownImage.hidden = true
-      }
+    // Name / Login
+    nameLabel.text = user.name
+    loginLabel.text = user.login
 
-      // Name / Login
-      nameLabel.text = user.name
-      loginLabel.text = user.login
+    // Phone / Mail / Location
+    phoneButton.setTitle(user.phone, forState: .Normal)
+    emailButton.setTitle(user.email, forState: .Normal)
+    locationLabel.text = user.location != nil ? user.location : "not logged"
 
-      // Phone / Mail / Location
-      phoneButton.setTitle(user.phone, forState: .Normal)
-      emailButton.setTitle(user.email, forState: .Normal)
-      locationLabel.text = user.location != nil ? user.location : "not logged"
+    let cursus42 = getCursus42FromUser(user)
 
-      let cursus42 = getCursus42FromUser(user)
+    // Level
+    if cursus42 != nil {
+      let level = Int(cursus42!.level)
+      let percent = Int(cursus42!.level * 100) % 100
+      levelLabel.text = "Level \(level) - \(percent)%"
 
-      // Level
-      if cursus42 != nil {
-        let level = Int(cursus42!.level)
-        let percent = Int(cursus42!.level * 100) % 100
-        levelLabel.text = "Level \(level) - \(percent)%"
+      progressBar.setBarProgress(Float(percent) / 100)
+    }
+    else {
+      levelLabel.text = ""
+      progressBar.setBarProgress(0)
+    }
 
-        progressBar.setBarProgress(Float(percent) / 100)
-      }
-      else {
-        levelLabel.text = ""
-        progressBar.setBarProgress(0)
-      }
+    // Projects
+    if cursus42 == nil || cursus42!.projects.isEmpty {
+      disableCell(projectsCell)
+    }
 
-      // Projects
-      if cursus42 == nil || cursus42!.projects.isEmpty {
-        disableCell(projectsCell)
-      }
+    // Achievements
+    if user.achievements.isEmpty {
+      disableCell(achievementsCell)
+    }
 
-      // Achievements
-      if user.achievements.isEmpty {
-        disableCell(achievementsCell)
-      }
-
-      // Skills
-      if cursus42 == nil || cursus42!.skills.isEmpty {
-        disableCell(skillsCell)
-      }
-
+    // Skills
+    if cursus42 == nil || cursus42!.skills.isEmpty {
+      disableCell(skillsCell)
     }
 
     self.profileImage.layer.cornerRadius = 50
@@ -97,6 +105,31 @@ class UserDetailTableViewController: UITableViewController {
     }
   }
 
+  @IBAction func addAsContact(sender: UIBarButtonItem) {
+    let contact = CNMutableContact()
+
+    contact.givenName = user.name
+    contact.nickname = user.login
+    contact.organizationName = "42"
+
+    if let phoneNumber = user.phone {
+      contact.phoneNumbers = [CNLabeledValue(label: CNLabelPhoneNumberMobile, value: CNPhoneNumber(stringValue: phoneNumber))]
+    }
+
+    if !user.email.isEmpty {
+      contact.emailAddresses = [CNLabeledValue(label: "42", value: user.email)]
+    }
+
+    contact.urlAddresses = [CNLabeledValue(label: "intra 42", value: "https://profile.intra.42.fr/users/\(user.login)")]
+
+    let contactVC = CNContactViewController(forNewContact: contact)
+    contactVC.delegate = self
+
+    let contactNavigationVC = UINavigationController(rootViewController: contactVC)
+
+    self.presentViewController(contactNavigationVC, animated: true, completion: nil)
+  }
+
   private func disableCell(cell: UITableViewCell) {
     cell.contentView.alpha = 0.5
     cell.accessoryType = .None
@@ -105,7 +138,7 @@ class UserDetailTableViewController: UITableViewController {
 
   @IBAction func phoneButtonPressed() {
     if let phoneNumber = phoneButton.currentTitle?.removeWhitespace() {
-      callPhoneNumber(phoneNumber, shouldPrompt: true)
+      messagePhoneNumber(phoneNumber) // (phoneNumber, shouldPrompt: true)
     }
   }
 
