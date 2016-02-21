@@ -38,7 +38,7 @@
 		910059A61C616BBC00E0A3DA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		912C9EB91C61296A001B576C /* CustomImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomImageView.swift; sourceTree = "<group>"; };
 		913CA3C21C78C91400F3639E /* CustomProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomProgressView.swift; sourceTree = "<group>"; };
-		9148B9AE1C5BB54200913427 /* swifty_companion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = swifty_companion.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9148B9AE1C5BB54200913427 /* 42 Peeps.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "42 Peeps.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9148B9B11C5BB54200913427 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9148B9B61C5BB54200913427 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9148B9BB1C5BB54200913427 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -96,7 +96,7 @@
 		9148B9AF1C5BB54200913427 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				9148B9AE1C5BB54200913427 /* swifty_companion.app */,
+				9148B9AE1C5BB54200913427 /* 42 Peeps.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -207,7 +207,7 @@
 			);
 			name = swifty_companion;
 			productName = swifty_companion;
-			productReference = 9148B9AE1C5BB54200913427 /* swifty_companion.app */;
+			productReference = 9148B9AE1C5BB54200913427 /* 42 Peeps.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -441,8 +441,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = swifty_companion/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.extends42.akabab.swifty-companion";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.extends42.akabab.42peeps;
+				PRODUCT_NAME = "42 Peeps";
 			};
 			name = Debug;
 		};
@@ -453,8 +453,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = swifty_companion/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.extends42.akabab.swifty-companion";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.extends42.akabab.42peeps;
+				PRODUCT_NAME = "42 Peeps";
 			};
 			name = Release;
 		};
