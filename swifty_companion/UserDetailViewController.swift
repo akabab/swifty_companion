@@ -108,6 +108,10 @@ class UserDetailTableViewController: UITableViewController {
   @IBAction func addAsContact(sender: UIBarButtonItem) {
     let contact = CNMutableContact()
 
+    if let image = profileImage.image {
+      contact.imageData = UIImageJPEGRepresentation(image, 1.0)
+    }
+
     contact.givenName = user.name
     contact.nickname = user.login
     contact.organizationName = "42"
