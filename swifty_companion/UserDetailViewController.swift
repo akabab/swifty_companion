@@ -51,6 +51,8 @@ class UserDetailTableViewController: UITableViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
 
+    titleItem.title = user.login
+
     // Contact Feature
     addButtonItem.enabled = false
     checkContactExistence()
@@ -159,15 +161,12 @@ class UserDetailTableViewController: UITableViewController {
             self.addButtonItem.enabled = true
           }
         }
-        else {
-          print("contact already exists")
-        }
       }
       catch {
         print(error)
       }
     }
-    
+
   }
 
   private func disableCell(cell: UITableViewCell) {
