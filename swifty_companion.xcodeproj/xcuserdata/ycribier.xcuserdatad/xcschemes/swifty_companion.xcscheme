@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "9148B9AD1C5BB54200913427"
-               BuildableName = "swifty_companion.app"
+               BuildableName = "42 Peeps.app"
                BlueprintName = "swifty_companion"
                ReferencedContainer = "container:swifty_companion.xcodeproj">
             </BuildableReference>
@@ -33,7 +33,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "9148B9AD1C5BB54200913427"
-            BuildableName = "swifty_companion.app"
+            BuildableName = "42 Peeps.app"
             BlueprintName = "swifty_companion"
             ReferencedContainer = "container:swifty_companion.xcodeproj">
          </BuildableReference>
@@ -56,7 +56,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "9148B9AD1C5BB54200913427"
-            BuildableName = "swifty_companion.app"
+            BuildableName = "42 Peeps.app"
             BlueprintName = "swifty_companion"
             ReferencedContainer = "container:swifty_companion.xcodeproj">
          </BuildableReference>
@@ -75,7 +75,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "9148B9AD1C5BB54200913427"
-            BuildableName = "swifty_companion.app"
+            BuildableName = "42 Peeps.app"
             BlueprintName = "swifty_companion"
             ReferencedContainer = "container:swifty_companion.xcodeproj">
          </BuildableReference>
