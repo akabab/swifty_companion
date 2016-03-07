@@ -190,8 +190,11 @@ class UserDetailTableViewController: UITableViewController {
       self.messagePhoneNumber(phoneNumber)
     }
 
+    let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel) { _ in }
+
     alert.addAction(firstAction)
     alert.addAction(secondAction)
+    alert.addAction(cancelAction)
     presentViewController(alert, animated: true, completion: nil)
   }
 
