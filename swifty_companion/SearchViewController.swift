@@ -71,7 +71,7 @@ class SearchViewController: UIViewController {
     self.user = nil
 
     if let login = loginTextField.text where !login.isEmpty {
-      searchLogin(login)
+      searchLogin(login.lowercaseString)
     }
     else {
       self.messageLabel.text = "\(SearchError.EmptyField)"
